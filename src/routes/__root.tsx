@@ -11,6 +11,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Header } from "@/components/site/header";
+import { Footer } from "@/components/site/footer";
+import { FloatingWa } from "@/components/site/floating-wa";
 
 function NotFoundComponent() {
   return (
