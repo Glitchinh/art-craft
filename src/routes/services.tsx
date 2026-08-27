@@ -39,7 +39,7 @@ function ServicesPage() {
         </p>
       </section>
 
-      <div className="mx-auto max-w-6xl space-y-16 px-4 py-16 sm:px-6 lg:space-y-24 lg:py-20">
+      <div className="mx-auto max-w-6xl space-y-10 px-4 py-12 sm:space-y-16 sm:px-6 sm:py-16 lg:space-y-24 lg:py-20">
         {services.map((s, i) => (
           <article
             key={s.slug}
@@ -59,8 +59,8 @@ function ServicesPage() {
               />
             </figure>
             <div>
-              <p className="font-script text-3xl text-accent">0{i + 1}</p>
-              <h2 className="mt-2 text-3xl text-foreground sm:text-4xl">{s.title}</h2>
+              <p className="font-script text-2xl text-accent sm:text-3xl">0{i + 1}</p>
+              <h2 className="mt-2 text-2xl text-foreground sm:text-3xl lg:text-4xl">{s.title}</h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
               <ul className="mt-6 space-y-2.5">
                 {s.includes.map((inc) => (

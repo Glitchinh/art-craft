@@ -50,7 +50,7 @@ function AboutPage() {
         </h1>
       </section>
 
-      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-16">
+      <section className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-10 sm:gap-10 sm:px-6 sm:py-16 lg:grid-cols-2 lg:gap-16">
         <img
           src={studio}
           alt="Craft studio table with embroidery hoops, threads and dried flowers"
@@ -60,7 +60,7 @@ function AboutPage() {
           className="w-full rounded-3xl object-cover shadow-lg"
         />
         <div>
-          <h2 className="text-3xl text-foreground sm:text-4xl">Why we started</h2>
+          <h2 className="text-2xl text-foreground sm:text-3xl lg:text-4xl\">Why we started</h2>
           <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
             <p>
               {site.name} began the way most handmade things do — with one gift, made for someone

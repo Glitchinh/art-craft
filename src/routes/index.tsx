@@ -60,7 +60,7 @@ function Home() {
 function Hero() {
   return (
     <section className="paper relative">
-      <div className="mx-auto grid max-w-[86rem] items-center gap-14 px-5 pb-20 pt-10 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-28 lg:pt-16">
+      <div className="mx-auto grid max-w-[86rem] items-center gap-8 px-5 pb-12 pt-8 sm:px-8 sm:gap-10 sm:pb-16 sm:pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-28 lg:pt-16">
         <div>
           <Reveal>
             <p className="flex items-center gap-3 text-accent">
@@ -73,7 +73,7 @@ function Hero() {
 
           <MaskedLines
             as="h1"
-            className="mt-7 display-xl text-ink"
+            className="mt-7 text-3xl text-ink sm:text-4xl lg:display-xl"
             lines={[
               "Made by hand,",
               <>
@@ -339,9 +339,9 @@ function OccasionBand() {
   const { ref, shown } = useReveal<HTMLDivElement>({ threshold: 0.25 });
 
   return (
-    <section className="bg-primary py-20 text-primary-foreground lg:py-24">
+    <section className="bg-primary py-12 sm:py-16 text-primary-foreground lg:py-24">
       <div className="mx-auto max-w-[86rem] px-5 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
+        <div className="grid gap-8 lg:gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
           <Reveal>
             <p className="flex items-center gap-3 text-primary-foreground/65">
               <span aria-hidden="true" className="h-px w-8 bg-current" />
@@ -383,17 +383,17 @@ function Words() {
   if (!lead) return null;
 
   return (
-    <section className="mx-auto max-w-[86rem] px-5 py-20 sm:px-8 lg:py-28">
+    <section className="mx-auto max-w-[86rem] px-5 py-12 sm:py-16 sm:px-8 lg:py-28">
       <SectionHeading eyebrow="From the chat" title="What people said afterwards" className="mb-14" />
 
       <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
         <Reveal>
-          <figure className="flex h-full flex-col justify-between rounded-[1.75rem] border border-border bg-card p-9 lg:p-11">
+          <figure className="flex h-full flex-col justify-between rounded-[1.75rem] border border-border bg-card p-6 sm:p-9 lg:p-11">
             <div>
               <span aria-hidden="true" className="font-display text-6xl leading-none text-accent/25">
                 &ldquo;
               </span>
-              <blockquote className="-mt-4 font-display text-xl leading-[1.45] text-ink sm:text-2xl">
+              <blockquote className="-mt-4 font-display text-lg sm:text-xl leading-[1.45] text-ink lg:text-2xl">
                 {lead.quote}
               </blockquote>
             </div>
@@ -431,8 +431,8 @@ function Closing() {
   const { ref, shown } = useReveal<HTMLDivElement>({ threshold: 0.25 });
 
   return (
-    <section className="mx-auto max-w-[86rem] px-5 pb-24 sm:px-8">
-      <div ref={ref} className="paper relative overflow-hidden rounded-[2.5rem] border border-border px-6 py-20 text-center sm:px-12 lg:py-24">
+    <section className="mx-auto max-w-[86rem] px-5 pb-16 sm:pb-24 sm:px-8">
+      <div ref={ref} className="paper relative overflow-hidden rounded-[2.5rem] border border-border px-5 py-12 text-center sm:px-12 sm:py-20 lg:py-24">
         <div className="flex justify-center">
           <StitchRule drawn={shown} className="max-w-40" />
         </div>
