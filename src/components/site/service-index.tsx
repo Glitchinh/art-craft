@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import { services } from "@/config/site";
+import { homepageBestSellerSlugs, services } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { useReveal } from "@/hooks/use-reveal";
 
@@ -16,15 +16,18 @@ import { useReveal } from "@/hooks/use-reveal";
 export function ServiceIndex() {
   const [active, setActive] = useState(0);
   const { ref, shown } = useReveal<HTMLDivElement>({ threshold: 0.12 });
+  const displayedServices = services.filter((service) =>
+    homepageBestSellerSlugs.includes(service.slug as (typeof homepageBestSellerSlugs)[number]),
+  );
 
   // `services` is a non-empty literal, but the index signature is still
   // optional under noUncheckedIndexedAccess — fall back to the first entry.
-  const current = services[active] ?? services[0]!;
+  const current = displayedServices[active] ?? displayedServices[0]!;
 
   return (
     <div ref={ref} className="grid gap-12 lg:grid-cols-[1fr_26rem] lg:items-start lg:gap-16">
       <ol className="border-t border-border">
-        {services.map((s, i) => (
+        {displayedServices.map((s, i) => (
           <li
             key={s.slug}
             className={cn("reveal border-b border-border", shown && "reveal-shown")}
@@ -96,7 +99,7 @@ export function ServiceIndex() {
       {/* Preview panel — desktop only */}
       <div className="sticky top-28 hidden lg:block">
         <div className="relative aspect-4/5 overflow-hidden rounded-[1.75rem] bg-muted">
-          {services.map((s, i) => (
+          {displayedServices.map((s, i) => (
             <img
               key={s.slug}
               src={s.image}

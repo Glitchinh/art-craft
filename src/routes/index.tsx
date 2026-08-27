@@ -155,13 +155,15 @@ function Hero() {
 
 function TickerBand() {
   const items = [
-    "Fabric painting",
-    "Canvas portraits",
-    "Hand embroidery",
-    "Hoop art",
-    "Name plates",
-    "Gift hampers",
-    "Bulk wedding favours",
+    "Customised canvas paintings",
+    "Lippan art",
+    "Wedding wall frames",
+    "Crochet",
+    "Tote bags",
+    "Wall hangings",
+    "Greeting cards",
+    "Customised gifts",
+    "Personal keepsakes",
   ];
 
   return (
@@ -209,10 +211,10 @@ function ServicesSection() {
         eyebrow="What we make"
         title={
           <>
-            Five things, done <span className="font-editorial text-accent">properly</span>
+            Handmade keepsakes, done <span className="font-editorial text-accent">properly</span>
           </>
         }
-        subtitle="Anything outside this list is worth asking about. Most of the odd requests turn into the best pieces."
+        subtitle="From wall art and gifting pieces to personal keepsakes, most of the best work begins with a custom brief."
         className="mb-14"
       />
       <ServiceIndex />

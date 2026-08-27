@@ -12,13 +12,13 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Customised fabric painting, canvas paintings, fabric hand embroidery, embroidery hoops and décor & gifts — with turnaround times and what's included.",
+          "Customised canvas paintings, lippan art, wedding wall frames, crochet, tote bags, wall hangings, greeting cards and custom gifts — with turnaround times and what's included.",
       },
       { property: "og:title", content: "Our Custom Services — Gift With Love" },
       {
         property: "og:description",
         content:
-          "Five handmade services: fabric painting, canvas art, hand embroidery, hoop art and custom décor & gifts.",
+          "Handmade services: customised canvas paintings, lippan art, wedding wall frames, crochet, tote bags, wall hangings, greeting cards and customised gifts.",
       },
     ],
   }),
