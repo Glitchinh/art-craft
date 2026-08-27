@@ -4,6 +4,7 @@ import { site } from "@/config/site";
 export function waLink(message?: string) {
   const base = site.whatsappLink;
   if (!message) return base;
+  if (base.includes("/qr/")) return base;
   const separator = base.includes("?") ? "&" : "?";
   return `${base}${separator}text=${encodeURIComponent(message)}`;
 }

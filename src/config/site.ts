@@ -26,7 +26,7 @@ export const site = {
   shortName: "GWL",
   tagline: "Painted, stitched and wrapped one at a time.",
 
-  whatsappLink: "https://wa.me/qr/3WZKHTIBCRN5G1",
+  whatsappLink: "https://wa.me/917396964973",
 
   /* Left blank on purpose: the WhatsApp buttons carry the contact, so there is
      no placeholder number sitting on the page. Add the real one to print it
@@ -39,7 +39,7 @@ export const site = {
   studioHours: "Mon to Sat, 10am – 8pm IST",
 
   /* TODO: replace with the real profile URLs. Empty strings hide the icon. */
-  instagram: "",
+  instagram: "https://www.instagram.com/stroke.andstitch?igsi=eHNiNmwxMXF1ODly",
   facebook: "",
   pinterest: "",
 
