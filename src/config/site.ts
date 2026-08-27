@@ -286,6 +286,24 @@ export const services: Service[] = [
     care: "Keep packed items dry and store finished décor away from direct sunlight.",
     image: galleryPortrait,
   },
+  {
+    slug: "quilling-art",
+    title: "Quilling Art",
+    index: "Quilling art",
+    short: "Delicate rolled-paper artwork shaped into personalised gifts and décor.",
+    description:
+      "Quilling art turns carefully rolled paper into flowers, names, patterns and keepsake designs. It is a beautiful choice for framed gifts, special occasions and small personalised pieces with plenty of detail.",
+    includes: [
+      "Floral and botanical paper designs",
+      "Names, initials and personalised motifs",
+      "Framed artwork and keepsake options",
+      "Custom colours for your occasion",
+    ],
+    turnaround: "5 to 10 days",
+    from: "₹500",
+    care: "Keep flat, dry and away from direct sunlight. Dust gently with a soft brush.",
+    image: galleryDecor,
+  },
 ];
 
 export const homepageBestSellerSlugs = [
