@@ -51,29 +51,29 @@ export function Header() {
       >
         <div
           className={cn(
-            "mx-auto flex max-w-[86rem] items-center justify-between gap-6 px-5 transition-all duration-500 sm:px-8",
+            "mx-auto flex max-w-[86rem] items-center justify-between gap-3 px-4 transition-all duration-500 sm:gap-6 sm:px-8",
             "[transition-timing-function:var(--ease-out-soft)]",
-            scrolled ? "py-3" : "py-5",
+            scrolled ? "py-3" : "py-4 sm:py-5",
           )}
         >
-          <Link to="/" className="group flex items-center gap-3" aria-label={`${site.name} — home`}>
+          <Link to="/" className="group flex min-w-0 items-center gap-2.5 sm:gap-3" aria-label={`${site.name} — home`}>
             <Monogram
               className={cn(
                 "shrink-0 text-primary transition-all duration-500",
-                scrolled ? "size-9" : "size-11",
+                scrolled ? "size-8 sm:size-9" : "size-9 sm:size-11",
               )}
             />
-            <span className="leading-none">
+            <span className="min-w-0 leading-none">
               <span
                 className={cn(
-                  "block font-display tracking-[-0.02em] text-ink transition-all duration-500",
-                  scrolled ? "text-lg" : "text-xl",
+                  "block truncate font-display tracking-[-0.02em] text-ink transition-all duration-500",
+                  scrolled ? "text-base sm:text-lg" : "text-lg sm:text-xl",
                 )}
                 style={{ fontVariationSettings: '"opsz" 24, "SOFT" 30, "WONK" 1' }}
               >
                 {site.name}
               </span>
-              <span className="mt-1 block text-2xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+              <span className="mt-1 hidden text-2xs font-semibold uppercase tracking-[0.24em] text-muted-foreground sm:block">
                 Handmade studio
               </span>
             </span>
@@ -93,7 +93,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <WaButton href={waGeneral()} size="sm" className="hidden sm:inline-flex">
               Start an order
             </WaButton>
@@ -102,9 +102,9 @@ export function Header() {
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
-              className="inline-flex size-11 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent hover:text-accent lg:hidden"
+              className="inline-flex size-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent hover:text-accent sm:size-11 lg:hidden"
             >
-              {open ? <X className="size-5" /> : <Menu className="size-5" />}
+              {open ? <X className="size-4 sm:size-5" /> : <Menu className="size-4 sm:size-5" />}
             </button>
           </div>
         </div>
@@ -119,7 +119,7 @@ export function Header() {
             onClick={() => setOpen(false)}
             className="fade-in absolute inset-0 h-full w-full cursor-default bg-ink/45 backdrop-blur-sm"
           />
-          <nav className="pop-in absolute inset-x-3 top-3 origin-top rounded-3xl border border-border bg-card p-3 shadow-2xl">
+          <nav className="pop-in absolute inset-x-3 top-3 max-h-[calc(100vh-1.5rem)] origin-top overflow-y-auto rounded-3xl border border-border bg-card p-3 shadow-2xl">
             <div className="flex items-center justify-between px-3 pb-2 pt-1">
               <span className="label-caps text-muted-foreground">Menu</span>
               <button

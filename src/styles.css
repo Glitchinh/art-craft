@@ -139,6 +139,19 @@
     text-rendering: optimizeLegibility;
   }
 
+  @media (max-width: 640px) {
+    body {
+      font-size: 0.96rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      letter-spacing: -0.016em;
+    }
+  }
+
   h1,
   h2,
   h3,

@@ -70,22 +70,24 @@ function ContactPage() {
 
   return (
     <div>
-      <section className="bg-blush/40 px-4 py-14 text-center sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Get in touch</p>
-        <h1 className="mt-4 text-4xl text-foreground sm:text-5xl">
+      <section className="bg-blush/40 px-4 py-12 text-center sm:px-6 sm:py-14">
+        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-accent sm:text-xs">
+          Get in touch
+        </p>
+        <h1 className="mt-4 text-[2.3rem] leading-[1.02] text-foreground sm:text-5xl">
           Let&apos;s plan your
           <span className="font-script text-accent"> gift</span>
         </h1>
-        <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-5">
           WhatsApp is the fastest way to reach us. Fill in the form below and it opens a chat with
           your details already written out.
         </p>
       </section>
 
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1.1fr]">
+      <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:gap-8 sm:px-6 sm:py-16 lg:grid-cols-[1fr_1.1fr]">
         {/* WhatsApp card + details */}
         <div className="space-y-6">
-          <div className="rounded-3xl bg-primary p-8 text-primary-foreground">
+          <div className="rounded-3xl bg-primary p-5 text-primary-foreground sm:p-8">
             <WaIcon className="size-8" />
             <h2 className="mt-4 text-2xl text-primary-foreground">Book on WhatsApp</h2>
             <p className="mt-3 text-sm leading-relaxed text-primary-foreground/80">
@@ -100,7 +102,7 @@ function ContactPage() {
             </div>
           </div>
 
-          <ul className="space-y-4 rounded-3xl border border-border bg-card p-7 text-sm">
+          <ul className="space-y-4 rounded-3xl border border-border bg-card p-5 text-sm sm:p-7">
             <li className="flex items-start gap-3">
               <Clock className="mt-0.5 size-4 shrink-0 text-accent" />
               <span>
@@ -130,7 +132,7 @@ function ContactPage() {
                   href={site.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground underline decoration-accent/40 underline-offset-4"
+                  className="break-all text-muted-foreground underline decoration-accent/40 underline-offset-4"
                 >
                   Follow our latest work
                 </a>
@@ -141,10 +143,10 @@ function ContactPage() {
 
         {/* Enquiry form */}
         <form
-          className="rounded-3xl border border-border bg-card p-7 sm:p-9"
+          className="rounded-3xl border border-border bg-card p-4 sm:p-7 lg:p-9"
           onSubmit={(e) => e.preventDefault()}
         >
-          <h2 className="text-2xl text-foreground">Tell us about your idea</h2>
+          <h2 className="text-xl text-foreground sm:text-2xl">Tell us about your idea</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Nothing is sent from this page — the button below opens WhatsApp with your answers
             filled in.
