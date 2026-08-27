@@ -5,23 +5,32 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system definition.
+ * Design system.
  *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * Type:  Fraunces (variable serif, optical sizing) for display, Instrument Sans
+ *        for text. Display sizes lean on low `opsz` + a little WONK so large
+ *        headings keep the slightly irregular, cut-by-hand feel.
+ * Colour: warm paper, deep ink, olive, madder. All values oklch.
+ * Motion: see the "Motion" block near the bottom. Everything there is gated on
+ *        prefers-reduced-motion.
  */
 
 @theme inline {
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-script: "Dancing Script", cursive;
-  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Fluid type scale — clamp(min, preferred, max) */
+  --text-2xs: 0.6875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.0625rem;
+  --text-step-1: clamp(1.25rem, 0.6vw + 1.1rem, 1.5rem);
+  --text-step-2: clamp(1.5rem, 1.2vw + 1.2rem, 2rem);
+  --text-step-3: clamp(1.95rem, 2.2vw + 1.35rem, 2.85rem);
+  --text-step-4: clamp(2.4rem, 3.6vw + 1.5rem, 4.25rem);
+  --text-step-5: clamp(2.9rem, 6vw + 1.4rem, 6.5rem);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -29,6 +38,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -55,38 +65,56 @@
   --color-terracotta: var(--terracotta);
   --color-terracotta-foreground: var(--terracotta-foreground);
   --color-cream: var(--cream);
+  --color-ochre: var(--ochre);
+  --color-ink: var(--ink);
   --color-whatsapp: var(--whatsapp);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 :root {
   --radius: 1rem;
-  /* Blush & Sage */
-  --background: oklch(0.977 0.008 60);
-  --foreground: oklch(0.29 0.03 40);
-  --card: oklch(0.995 0.004 70);
-  --card-foreground: oklch(0.29 0.03 40);
-  --popover: oklch(0.995 0.004 70);
-  --popover-foreground: oklch(0.29 0.03 40);
-  --primary: oklch(0.47 0.055 135);
-  --primary-foreground: oklch(0.98 0.008 90);
-  --secondary: oklch(0.92 0.032 20);
-  --secondary-foreground: oklch(0.36 0.06 30);
-  --muted: oklch(0.955 0.012 60);
-  --muted-foreground: oklch(0.5 0.025 45);
-  --accent: oklch(0.585 0.115 40);
-  --accent-foreground: oklch(0.985 0.006 70);
+
+  /* Warm paper / deep ink. Contrast raised over the old palette so body copy
+     clears WCAG AA at 14px. */
+  --background: oklch(0.973 0.011 74);
+  --foreground: oklch(0.248 0.029 44);
+  --ink: oklch(0.19 0.024 42);
+  --card: oklch(0.995 0.005 76);
+  --card-foreground: oklch(0.248 0.029 44);
+  --popover: oklch(0.995 0.005 76);
+  --popover-foreground: oklch(0.248 0.029 44);
+
+  /* Olive — deeper and less minty than a stock sage */
+  --primary: oklch(0.398 0.052 138);
+  --primary-foreground: oklch(0.977 0.012 88);
+
+  --secondary: oklch(0.912 0.031 22);
+  --secondary-foreground: oklch(0.335 0.058 32);
+
+  --muted: oklch(0.951 0.014 66);
+  --muted-foreground: oklch(0.468 0.026 48);
+
+  /* Madder — warmer and more saturated than the old terracotta */
+  --accent: oklch(0.532 0.138 37);
+  --accent-foreground: oklch(0.984 0.007 74);
+
   --destructive: oklch(0.55 0.19 27);
   --destructive-foreground: oklch(0.985 0.006 70);
-  --border: oklch(0.9 0.018 55);
-  --input: oklch(0.9 0.018 55);
-  --ring: oklch(0.585 0.115 40);
-  --blush: oklch(0.92 0.032 20);
-  --blush-foreground: oklch(0.36 0.06 30);
-  --sage: oklch(0.47 0.055 135);
-  --sage-foreground: oklch(0.98 0.008 90);
-  --terracotta: oklch(0.585 0.115 40);
-  --terracotta-foreground: oklch(0.985 0.006 70);
-  --cream: oklch(0.965 0.014 75);
+
+  --border: oklch(0.888 0.019 58);
+  --input: oklch(0.878 0.021 58);
+  --ring: oklch(0.532 0.138 37);
+
+  --blush: oklch(0.912 0.031 22);
+  --blush-foreground: oklch(0.335 0.058 32);
+  --sage: oklch(0.398 0.052 138);
+  --sage-foreground: oklch(0.977 0.012 88);
+  --terracotta: oklch(0.532 0.138 37);
+  --terracotta-foreground: oklch(0.984 0.007 74);
+  --cream: oklch(0.958 0.017 78);
+  --ochre: oklch(0.735 0.098 76);
   --whatsapp: oklch(0.6 0.15 150);
 }
 
@@ -95,10 +123,20 @@
     border-color: var(--color-border);
   }
 
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   h1,
@@ -106,29 +144,322 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-weight: 460;
+    line-height: 1.04;
+    letter-spacing: -0.018em;
+    /* Low optical size + a touch of WONK keeps big headings from looking
+       machine-set. SOFT rounds the terminals very slightly. */
+    font-variation-settings:
+      "opsz" 88,
+      "SOFT" 26,
+      "WONK" 1;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-weight: 430;
+    letter-spacing: -0.028em;
+  }
+
+  h3,
+  h4 {
+    font-variation-settings:
+      "opsz" 30,
+      "SOFT" 20,
+      "WONK" 0;
+    letter-spacing: -0.012em;
+    line-height: 1.16;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-accent) 22%, transparent);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  img {
+    /* Stops the "flash of squashed image" before intrinsic size resolves. */
+    max-width: 100%;
+    height: auto;
   }
 }
 
-@utility font-script {
-  font-family: var(--font-script);
+/* ---------------------------------------------------------------- Typography */
+
+/* Editorial italic used for the signature lines. Replaces the script face —
+   Fraunces italic at low opsz reads as hand-set rather than novelty. */
+@utility font-editorial {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-variation-settings:
+    "opsz" 16,
+    "SOFT" 60,
+    "WONK" 1;
+  letter-spacing: -0.005em;
 }
+
+/* Small letterspaced caps for eyebrows and labels. */
+@utility label-caps {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xs);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+@utility display-xl {
+  font-size: var(--text-step-5);
+}
+
+@utility display-lg {
+  font-size: var(--text-step-4);
+}
+
+@utility display-md {
+  font-size: var(--text-step-3);
+}
+
+@utility display-sm {
+  font-size: var(--text-step-2);
+}
+
+/* Numerals in tabular form so aligned figures don't jitter. */
+@utility nums-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------------------------ Surfaces */
 
 @utility dashed-card {
   border: 1px dashed var(--color-border);
   background-color: var(--color-cream);
 }
 
-@utility reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  animation: reveal-in 0.7s ease-out forwards;
+/* Very fine paper tooth. Two low-opacity gradients, no image request. */
+@utility paper {
+  background-image:
+    radial-gradient(
+      circle at 18% 12%,
+      color-mix(in oklab, var(--color-ochre) 9%, transparent),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 84% 78%,
+      color-mix(in oklab, var(--color-blush) 30%, transparent),
+      transparent 46%
+    );
 }
 
-@keyframes reveal-in {
+/* Hairline rule that fades at both ends. */
+@utility rule-fade {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-border) 18%,
+    var(--color-border) 82%,
+    transparent
+  );
+}
+
+/* Underline that draws in on hover, for inline links. */
+@utility link-draw {
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background-color: currentColor;
+    scale: 0 1;
+    transform-origin: left center;
+    transition: scale 0.45s var(--ease-out-soft);
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    scale: 1 1;
+  }
+}
+
+/* -------------------------------------------------------------------- Motion */
+
+/*
+ * Reveal-on-scroll. `.reveal` sets the hidden state; the IntersectionObserver in
+ * use-reveal.ts adds [data-shown] to play it. Staggering is done with
+ * --reveal-delay set inline per child.
+ *
+ * NOTE (Tailwind v4): keyframes here animate the individual `translate` and
+ * `scale` properties rather than `transform`, so they compose with Tailwind's
+ * own translate and scale utilities instead of overwriting them.
+ */
+@utility reveal {
+  opacity: 0;
+  translate: 0 var(--reveal-shift, 18px);
+  transition:
+    opacity 0.85s var(--ease-out-soft),
+    translate 0.85s var(--ease-out-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, translate;
+}
+
+@utility reveal-shown {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Wipe a heading up from behind its own baseline. Wrap each line in a span. */
+@utility line-mask {
+  display: block;
+  overflow: hidden;
+  padding-block-end: 0.12em;
+  margin-block-end: -0.12em;
+}
+
+@utility line-mask-inner {
+  display: block;
+  translate: 0 105%;
+  transition: translate 1s var(--ease-out-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+@utility line-mask-shown {
+  translate: 0 0;
+}
+
+/* Continuous marquee. Track holds two identical groups; we shift by -50%. */
+@utility marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide var(--marquee-duration, 42s) linear infinite;
+}
+
+@utility marquee-paused {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-slide {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: -50% 0;
+  }
+}
+
+/* Slow drift for decorative hero art. */
+@keyframes drift {
+  0%,
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+  50% {
+    translate: 0 -12px;
+    rotate: 1.1deg;
+  }
+}
+
+@utility drift-slow {
+  animation: drift 11s var(--ease-in-out-soft) infinite;
+}
+
+/* Dialog / lightbox entrance. */
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    scale: 0.965;
+  }
   to {
     opacity: 1;
-    transform: none;
+    scale: 1;
+  }
+}
+
+@utility pop-in {
+  animation: pop-in 0.35s var(--ease-out-soft) forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@utility fade-in {
+  animation: fade-in 0.28s ease-out forwards;
+}
+
+/* Thread being stitched — used on section dividers. */
+@keyframes stitch {
+  from {
+    stroke-dashoffset: 220;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@utility stitch-draw {
+  stroke-dasharray: 220;
+  animation: stitch 2.4s var(--ease-out-soft) forwards;
+}
+
+/*
+ * One switch for everything above. Anyone who has asked their OS to calm
+ * animations down gets the finished state immediately, with no motion.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  .line-mask-inner {
+    translate: 0 0;
+  }
+
+  .marquee-track {
+    animation: none;
+    /* Without the slide the duplicate group is dead weight; hide it. */
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .drift-slow {
+    animation: none;
   }
 }

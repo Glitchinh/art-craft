@@ -12,30 +12,51 @@ type Props = {
   href: string;
   children?: ReactNode;
   className?: string;
-  variant?: "solid" | "outline" | "cream";
+  variant?: "solid" | "outline" | "cream" | "ink";
   size?: "sm" | "md" | "lg";
 };
 
-export function WaButton({ href, children = "Order on WhatsApp", className, variant = "solid", size = "md" }: Props) {
+/**
+ * Primary call to action. The sheen sweep is a pseudo-element on the anchor, so
+ * it costs nothing but a transform and is suppressed under reduced motion by the
+ * global rule in styles.css.
+ */
+export function WaButton({
+  href,
+  children = "Order on WhatsApp",
+  className,
+  variant = "solid",
+  size = "md",
+}: Props) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-all duration-200 hover:-translate-y-0.5",
-        size === "sm" && "px-4 py-2 text-xs",
+        "group/wa relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full font-medium",
+        "transition-[translate,box-shadow,background-color,border-color] duration-300",
+        "[transition-timing-function:var(--ease-out-soft)] hover:-translate-y-0.5",
+        size === "sm" && "px-4.5 py-2.5 text-xs",
         size === "md" && "px-6 py-3 text-sm",
         size === "lg" && "px-8 py-4 text-base",
-        variant === "solid" && "bg-primary text-primary-foreground hover:bg-primary/90",
+        variant === "solid" &&
+          "bg-primary text-primary-foreground shadow-[0_1px_2px_rgba(0,0,0,0.10)] hover:shadow-[0_10px_28px_-10px_var(--color-primary)]",
+        variant === "ink" &&
+          "bg-ink text-background shadow-[0_1px_2px_rgba(0,0,0,0.14)] hover:shadow-[0_10px_28px_-10px_var(--color-ink)]",
         variant === "outline" &&
-          "border border-primary/40 bg-transparent text-primary hover:bg-primary/5",
-        variant === "cream" && "bg-card text-primary shadow-sm hover:bg-card/90",
+          "border border-primary/35 bg-transparent text-primary hover:border-primary/70 hover:bg-primary/5",
+        variant === "cream" && "bg-card text-primary shadow-sm hover:shadow-md",
         className,
       )}
     >
-      <WaIcon className="size-4 shrink-0" />
-      {children}
+      {/* sheen */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/22 to-transparent transition-transform duration-700 [transition-timing-function:var(--ease-out-soft)] group-hover/wa:translate-x-full"
+      />
+      <WaIcon className="relative size-4 shrink-0 transition-transform duration-300 group-hover/wa:scale-110" />
+      <span className="relative">{children}</span>
     </a>
   );
 }

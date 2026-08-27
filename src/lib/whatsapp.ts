@@ -1,10 +1,11 @@
 import { site } from "@/config/site";
 
-/** Builds a wa.me link with a pre-filled message. */
+/** Builds a WhatsApp link from `site.whatsappLink` with a pre-filled message. */
 export function waLink(message?: string) {
-  const base = `https://wa.me/${site.whatsappNumber}`;
+  const base = site.whatsappLink;
   if (!message) return base;
-  return `${base}?text=${encodeURIComponent(message)}`;
+  const separator = base.includes("?") ? "&" : "?";
+  return `${base}${separator}text=${encodeURIComponent(message)}`;
 }
 
 export const waGeneral = () =>
