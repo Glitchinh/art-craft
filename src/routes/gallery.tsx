@@ -8,13 +8,13 @@ import { WaButton } from "@/components/site/wa-button";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery of Handmade Pieces — Gift With Love" },
+      { title: "Gallery of Handmade Pieces — Stroke & Stitch" },
       {
         name: "description",
         content:
           "Browse hand-painted fabric, custom canvases, embroidery hoops and gift hampers we have made. Found something you like? Ask for it on WhatsApp.",
       },
-      { property: "og:title", content: "Gallery — Gift With Love" },
+      { property: "og:title", content: "Gallery — Stroke & Stitch" },
       {
         property: "og:description",
         content: "A look at our hand-painted, embroidered and handcrafted custom gifts.",

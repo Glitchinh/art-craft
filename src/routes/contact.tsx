@@ -9,13 +9,13 @@ import { SectionHeading } from "@/components/site/leaf-divider";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Booking — Gift With Love" },
+      { title: "Contact & Booking — Stroke & Stitch" },
       {
         name: "description",
         content:
           "Book a custom handmade gift over WhatsApp. Share the occasion, service and your idea — we reply the same day. No online payments required.",
       },
-      { property: "og:title", content: "Contact & Booking — Gift With Love" },
+      { property: "og:title", content: "Contact & Booking — Stroke & Stitch" },
       {
         property: "og:description",
         content: "Message us on WhatsApp to book your custom handmade gift.",

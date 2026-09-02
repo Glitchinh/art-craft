@@ -22,8 +22,8 @@ import galleryPortrait from "@/assets/gallery-portrait.jpg";
  * plain-number form. On a /qr/ link WhatsApp may open the chat empty.
  */
 export const site = {
-  name: "Gift With Love",
-  shortName: "GWL",
+  name: "Stroke & Stitch",
+  shortName: "S&S",
   tagline: "Painted, stitched and wrapped one at a time.",
 
   whatsappLink: "https://wa.me/917396964973",
@@ -158,7 +158,7 @@ export const services: Service[] = [
     turnaround: "6 to 10 days",
     from: "₹1,200",
     care: "Keep out of direct sunlight and avoid humid rooms. Dust with a soft dry cloth.",
-    image: galleryPortrait,
+    image: galleryDecor,
   },
   {
     slug: "crochet",
@@ -176,7 +176,7 @@ export const services: Service[] = [
     turnaround: "7 to 14 days",
     from: "₹900",
     care: "Hand wash gently with mild detergent and air dry away from direct sunlight.",
-    image: embroidery,
+    image: galleryCushion,
   },
   {
     slug: "tote-bags",
@@ -194,7 +194,7 @@ export const services: Service[] = [
     turnaround: "5 to 9 days",
     from: "₹1,100",
     care: "Spot clean or hand wash inside out. Avoid abrasive scrubbing and direct heat.",
-    image: fabricPainting,
+    image: embroidery,
   },
   {
     slug: "wall-hangings",
@@ -212,7 +212,7 @@ export const services: Service[] = [
     turnaround: "6 to 11 days",
     from: "₹1,300",
     care: "Keep away from moisture and direct sunlight. Dust lightly when needed.",
-    image: hoops,
+    image: galleryDecor,
   },
   {
     slug: "greeting-cards",

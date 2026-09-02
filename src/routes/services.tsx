@@ -8,13 +8,13 @@ import { SectionHeading } from "@/components/site/leaf-divider";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Our Custom Services — Gift With Love" },
+      { title: "Our Custom Services — Stroke & Stitch" },
       {
         name: "description",
         content:
           "Customised canvas paintings, lippan art, wedding wall frames, crochet, tote bags, wall hangings, greeting cards and custom gifts — with turnaround times and what's included.",
       },
-      { property: "og:title", content: "Our Custom Services — Gift With Love" },
+      { property: "og:title", content: "Our Custom Services — Stroke & Stitch" },
       {
         property: "og:description",
         content:

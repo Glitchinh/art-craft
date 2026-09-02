@@ -80,14 +80,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Gift With Love — Custom Handmade Art & Gifts" },
+      { title: "Stroke & Stitch — Custom Handmade Art & Gifts" },
       {
         name: "description",
         content:
           "Custom handmade fabric painting, canvas art, hand embroidery, hoop art and personalised gifts. Booked over WhatsApp.",
       },
-      { name: "author", content: "Gift With Love" },
-      { property: "og:title", content: "Gift With Love — Custom Handmade Art & Gifts" },
+      { name: "author", content: "Stroke & Stitch" },
+      { property: "og:title", content: "Stroke & Stitch — Custom Handmade Art & Gifts" },
       {
         property: "og:description",
         content: "Unique artistry, created for you. Handmade gifting for every occasion.",

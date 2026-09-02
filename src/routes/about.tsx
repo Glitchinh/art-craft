@@ -9,13 +9,13 @@ import { SectionHeading } from "@/components/site/leaf-divider";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Gift With Love — Handmade, One Piece at a Time" },
+      { title: "About Stroke & Stitch — Handmade, One Piece at a Time" },
       {
         name: "description",
         content:
-          "The story behind Gift With Love: a small handmade studio painting fabric, stitching hoops and building custom gifts for every occasion.",
+          "The story behind Stroke & Stitch: a small handmade studio painting fabric, stitching hoops and building custom gifts for every occasion.",
       },
-      { property: "og:title", content: "About Gift With Love" },
+      { property: "og:title", content: "About Stroke & Stitch" },
       {
         property: "og:description",
         content: "A small handmade studio making custom fabric painting, canvas art and embroidery.",

@@ -207,16 +207,26 @@ function Facts() {
 function ServicesSection() {
   return (
     <section className="mx-auto max-w-[86rem] px-5 pb-20 sm:px-8 lg:pb-28">
-      <SectionHeading
-        eyebrow="What we make"
-        title={
-          <>
-            Handmade keepsakes, done <span className="font-editorial text-accent">properly</span>
-          </>
-        }
-        subtitle="From wall art and gifting pieces to personal keepsakes, most of the best work begins with a custom brief."
-        className="mb-14"
-      />
+      <div className="flex flex-wrap items-end justify-between gap-8">
+        <SectionHeading
+          eyebrow="What we make"
+          title={
+            <>
+              Best sellers, made <span className="font-editorial text-accent">properly</span>
+            </>
+          }
+          subtitle="From wall art and gifting pieces to personal keepsakes, these are the handmade favourites customers return to."
+        />
+        <Reveal delay={120}>
+          <Link
+            to="/services"
+            className="link-draw inline-flex items-center gap-2 pb-2 text-sm font-medium text-ink transition-colors hover:text-accent"
+          >
+            View all services
+            <ArrowRight className="size-4" />
+          </Link>
+        </Reveal>
+      </div>
       <ServiceIndex />
     </section>
   );
