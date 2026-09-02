@@ -36,7 +36,7 @@ export const site = {
   shortName: "S&S",
   tagline: "Painted, stitched and wrapped one at a time.",
 
-  whatsappLink: "https://wa.me/917396964973",
+  whatsappLink: "https://wa.me/qr/47RCLTEEJM4XM1",
 
   /* Left blank on purpose: the WhatsApp buttons carry the contact, so there is
      no placeholder number sitting on the page. Add the real one to print it
