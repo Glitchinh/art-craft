@@ -7,6 +7,16 @@ import gallerySaree from "@/assets/gallery-saree.jpg";
 import galleryCushion from "@/assets/gallery-cushion.jpg";
 import galleryDecor from "@/assets/gallery-decor.jpg";
 import galleryPortrait from "@/assets/gallery-portrait.jpg";
+import lippanArt from "@/assets/lippan-art.png";
+import decorNameplate from "@/assets/decor-nameplate.png";
+import customisedGifts from "@/assets/customised-gifts.png";
+import weddingFrame from "@/assets/wedding-frame.png";
+import quillingArt from "@/assets/quilling-art.png";
+import crochetWallHanging from "@/assets/crochet-wall-hanging.png";
+import crochetTote from "@/assets/crochet-tote.png";
+import embroideryHoop from "@/assets/embroidery-hoop.png";
+import canvasPainting from "@/assets/canvas-painting.png";
+import fabricPaintingPhoto from "@/assets/fabric-painting.png";
 
 /**
  * Brand + contact configuration.
@@ -86,7 +96,7 @@ export const services: Service[] = [
     turnaround: "7 to 12 days",
     from: "₹1,200",
     care: "Hand wash cold, inside out. Iron on the reverse and avoid harsh detergent.",
-    image: fabricPainting,
+    image: fabricPaintingPhoto,
   },
   {
     slug: "canvas-paintings",
@@ -104,7 +114,7 @@ export const services: Service[] = [
     turnaround: "10 to 15 days",
     from: "₹2,500",
     care: "Keep out of direct sun. Dust with a dry cloth only, never a damp one.",
-    image: canvas,
+    image: canvasPainting,
   },
   {
     slug: "hoops",
@@ -122,7 +132,7 @@ export const services: Service[] = [
     turnaround: "5 to 10 days",
     from: "₹750",
     care: "Dust with a dry cloth and keep away from moisture or humid rooms.",
-    image: hoops,
+    image: embroideryHoop,
   },
   {
     slug: "lippan-art",
@@ -140,7 +150,7 @@ export const services: Service[] = [
     turnaround: "7 to 12 days",
     from: "₹1,800",
     care: "Keep away from damp corners and direct water splashes. Dust lightly with a dry cloth.",
-    image: galleryDecor,
+    image: lippanArt,
   },
   {
     slug: "wedding-wall-frames",
@@ -158,7 +168,7 @@ export const services: Service[] = [
     turnaround: "6 to 10 days",
     from: "₹1,200",
     care: "Keep out of direct sunlight and avoid humid rooms. Dust with a soft dry cloth.",
-    image: galleryDecor,
+    image: weddingFrame,
   },
   {
     slug: "crochet",
@@ -176,7 +186,7 @@ export const services: Service[] = [
     turnaround: "7 to 14 days",
     from: "₹900",
     care: "Hand wash gently with mild detergent and air dry away from direct sunlight.",
-    image: galleryCushion,
+    image: crochetWallHanging,
   },
   {
     slug: "tote-bags",
@@ -194,7 +204,7 @@ export const services: Service[] = [
     turnaround: "5 to 9 days",
     from: "₹1,100",
     care: "Spot clean or hand wash inside out. Avoid abrasive scrubbing and direct heat.",
-    image: embroidery,
+    image: crochetTote,
   },
   {
     slug: "wall-hangings",
@@ -212,7 +222,7 @@ export const services: Service[] = [
     turnaround: "6 to 11 days",
     from: "₹1,300",
     care: "Keep away from moisture and direct sunlight. Dust lightly when needed.",
-    image: galleryDecor,
+    image: decorNameplate,
   },
   {
     slug: "greeting-cards",
@@ -230,7 +240,7 @@ export const services: Service[] = [
     turnaround: "3 to 6 days",
     from: "₹350",
     care: "Store in a dry place and keep away from damp surfaces to protect the finish.",
-    image: gifts,
+    image: customisedGifts,
   },
   {
     slug: "customised-gifts",
@@ -248,7 +258,7 @@ export const services: Service[] = [
     turnaround: "5 to 12 days",
     from: "₹600",
     care: "Care instructions vary by item and are shared with every order before dispatch.",
-    image: gifts,
+    image: customisedGifts,
   },
   {
     slug: "decor-items",
@@ -266,7 +276,7 @@ export const services: Service[] = [
     turnaround: "5 to 12 days",
     from: "₹600",
     care: "Keep dry and dust gently with a soft cloth. Care varies by material.",
-    image: galleryDecor,
+    image: decorNameplate,
   },
   {
     slug: "wedding-essentials",
@@ -284,7 +294,7 @@ export const services: Service[] = [
     turnaround: "10 to 20 days",
     from: "₹900",
     care: "Keep packed items dry and store finished décor away from direct sunlight.",
-    image: galleryPortrait,
+    image: weddingFrame,
   },
   {
     slug: "quilling-art",
@@ -302,7 +312,7 @@ export const services: Service[] = [
     turnaround: "5 to 10 days",
     from: "₹500",
     care: "Keep flat, dry and away from direct sunlight. Dust gently with a soft brush.",
-    image: galleryDecor,
+    image: quillingArt,
   },
 ];
 
@@ -329,7 +339,7 @@ export const galleryItems: GalleryItem[] = [
     id: "g1",
     title: "Cosmos on cream linen",
     category: "Fabric Painting",
-    image: fabricPainting,
+    image: fabricPaintingPhoto,
     size: "tall",
     note: "Pallu border, painted over four sittings",
   },
@@ -345,7 +355,7 @@ export const galleryItems: GalleryItem[] = [
     id: "g3",
     title: "Lake at dusk",
     category: "Canvas",
-    image: canvas,
+    image: canvasPainting,
     size: "wide",
     note: "16×20 in, acrylic",
   },
@@ -353,7 +363,7 @@ export const galleryItems: GalleryItem[] = [
     id: "g4",
     title: "Couple portrait in pastel",
     category: "Canvas",
-    image: galleryPortrait,
+    image: weddingFrame,
     size: "tall",
     note: "Worked from a phone photo",
   },
@@ -361,7 +371,7 @@ export const galleryItems: GalleryItem[] = [
     id: "g5",
     title: "Wildflower tote",
     category: "Embroidery",
-    image: embroidery,
+    image: crochetTote,
     size: "square",
     note: "Cotton thread on canvas",
   },
@@ -369,7 +379,7 @@ export const galleryItems: GalleryItem[] = [
     id: "g6",
     title: "Name cushion, chain stitch",
     category: "Embroidery",
-    image: galleryCushion,
+    image: crochetWallHanging,
     size: "square",
     note: "Nursery set of two",
   },
@@ -377,7 +387,7 @@ export const galleryItems: GalleryItem[] = [
     id: "g7",
     title: "Meadow hoop, 8 inch",
     category: "Hoops",
-    image: hoops,
+    image: embroideryHoop,
     size: "tall",
     note: "One of thirty wedding favours",
   },
@@ -385,7 +395,7 @@ export const galleryItems: GalleryItem[] = [
     id: "g8",
     title: "Painted name plate",
     category: "Décor & Gifts",
-    image: galleryDecor,
+    image: decorNameplate,
     size: "wide",
     note: "Housewarming, Hyderabad",
   },
@@ -393,7 +403,7 @@ export const galleryItems: GalleryItem[] = [
     id: "g9",
     title: "Hamper in blush",
     category: "Décor & Gifts",
-    image: gifts,
+    image: customisedGifts,
     size: "square",
     note: "Built to a ₹2,000 budget",
   },
