@@ -222,9 +222,9 @@ function ServicesSection() {
       <Reveal delay={120}>
         <Link
           to="/services"
-          className="group mt-10 inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-[0_10px_28px_-14px_var(--color-primary)] transition-[translate,box-shadow,background-color] duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-[0_14px_34px_-12px_var(--color-primary)]"
+          className="link-draw group mt-8 inline-flex items-center gap-2 pb-2 text-sm font-medium text-ink transition-colors hover:text-accent"
         >
-          Browse all services
+          View all services
           <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </Reveal>
