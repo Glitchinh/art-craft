@@ -10,10 +10,16 @@ export function waLink(message?: string) {
 }
 
 export const waGeneral = () =>
-  waLink(`Hi ${site.name}! I'd like to order a custom handmade gift. Can you help me?`);
+  waLink(
+    `Hi ${site.name}! I would like to discuss a custom order. It is for [occasion], I need it by [date], and I have an idea or reference photo to share. Could you help me figure out what would work?`,
+  );
 
 export const waService = (service: string) =>
-  waLink(`Hi ${site.name}! I'm interested in "${service}". Could you share details and pricing?`);
+  waLink(
+    `Hi ${site.name}! I am interested in ${service}. It is for [occasion] and I need it by [date], if possible. Could you share the starting price and what details you need from me?`,
+  );
 
 export const waPiece = (piece: string) =>
-  waLink(`Hi ${site.name}! I saw "${piece}" on your website and would love something similar.`);
+  waLink(
+    `Hi ${site.name}! I saw ${piece} on your website and would love something similar. I am thinking of it for [occasion] and need it by [date]. Can I send you a reference photo and get an estimate?`,
+  );

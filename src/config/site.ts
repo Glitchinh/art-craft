@@ -462,19 +462,19 @@ export const process = [
 export const testimonials = [
   {
     quote:
-      "I sent a badly lit photo of my parents from the eighties and asked if anything could be done with it. What came back was better than the original. My mother has it in the hall now.",
+      "I only had one blurry photo of my parents from the eighties, but they made it work. My mum has the painting in the hall now and keeps telling everyone about it.",
     name: "Sneha R.",
     detail: "24×36 in canvas · Chennai",
   },
   {
     quote:
-      "Ordered thirty hoops as wedding favours six weeks out. They arrived a week early, every one of them numbered and wrapped separately, which saved me an entire evening.",
+      "I ordered 30 hoops for my wedding and was panicking a little about the deadline. They came early, wrapped one by one, and I did not have to sort anything when they arrived.",
     name: "Arun K.",
     detail: "30 embroidery hoops · Pune",
   },
   {
     quote:
-      "The painted border on my mother's old saree is the part everyone touched at the reception. It still feels like the same cloth, which is the bit I was worried about.",
+      "I was nervous about giving my mother's old saree to someone, but the painted border came out beautifully. It still feels like her saree, just a little more special now.",
     name: "Divya M.",
     detail: "Fabric painting · Hyderabad",
   },

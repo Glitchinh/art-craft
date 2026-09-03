@@ -207,7 +207,7 @@ function Facts() {
 function ServicesSection() {
   return (
     <section className="mx-auto max-w-[86rem] px-5 pb-20 sm:px-8 lg:pb-28">
-      <div className="flex flex-wrap items-end justify-between gap-8">
+      <div>
         <SectionHeading
           eyebrow="What we make"
           title={
@@ -220,10 +220,10 @@ function ServicesSection() {
         <Reveal delay={120}>
           <Link
             to="/services"
-            className="link-draw inline-flex items-center gap-2 pb-2 text-sm font-medium text-ink transition-colors hover:text-accent"
+            className="group mt-8 inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-[0_10px_28px_-14px_var(--color-primary)] transition-[translate,box-shadow,background-color] duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-[0_14px_34px_-12px_var(--color-primary)]"
           >
-            View all services
-            <ArrowRight className="size-4" />
+            Browse all services
+            <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </Reveal>
       </div>
